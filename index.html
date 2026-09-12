@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#02080e" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>SLOUG | Sri Lanka Oracle User Group</title>
     <meta
       name="description"
@@ -14,14 +16,14 @@
       content="Learn. Connect. Share. Innovate. Bringing Sri Lanka's Oracle community together."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/public/og.svg" />
+    <meta property="og:image" content="public/og.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SLOUG | Sri Lanka Oracle User Group" />
     <meta
       name="twitter:description"
       content="Learn. Connect. Share. Innovate. Bringing Sri Lanka's Oracle community together."
     />
-    <meta name="twitter:image" content="/public/og.svg" />
+    <meta name="twitter:image" content="public/og.svg" />
     <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,19 +36,27 @@
   <body>
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="SLOUG home">
-        <img class="brand-logo" src="images/dark_logo-transparent-alpha.png" alt="" />
+        <span class="brand-mark" aria-hidden="true">
+          <img src="images/dark_logo-transparent-alpha.png" alt="" />
+        </span>
         <span>
           <strong>SL<span class="sloug-o">O</span>UG</strong>
           <small>Sri Lanka Oracle User Group</small>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-nav" aria-expanded="false" data-menu-toggle>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+        <a class="is-active" href="#top">Home</a>
         <a href="#events">Events</a>
+        <a href="#learning">Resources</a>
         <a href="#community">Community</a>
-        <a href="#learning">Learning</a>
-        <a href="#partners">Partners</a>
-        <a href="https://www.youtube.com/@sloug-yt" target="_blank" rel="noopener">YouTube</a>
+        <a href="#partners">About</a>
       </nav>
 
     </header>
@@ -55,44 +65,86 @@
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-copy">
+            <p class="hero-eyebrow">Connecting people.<br />Powering possibilities.</p>
             <h1>SL<span class="sloug-o">O</span>UG</h1>
             <p class="hero-subtitle">Sri Lanka Oracle User Group</p>
-            <p class="hero-tagline">Learn. Connect. Share. Innovate.</p>
             <p class="intro">
-              Bringing Sri Lanka's Oracle community together.
+              A community for Oracle professionals,<br />
+              learners, and enthusiasts in Sri Lanka.<br />
+              Let’s learn, connect, share, and<br />
+              innovate together.
             </p>
-            <div class="hero-actions" aria-label="Primary actions">
-              <a class="button primary" href="#events">View Next Event</a>
-              <a class="button secondary" href="https://www.youtube.com/@sloug-yt" target="_blank" rel="noopener"
-                >Watch on YouTube</a
+            <div class="hero-actions">
+              <a
+                class="hero-button primary"
+                href="https://chat.whatsapp.com/Fgv7mRJIZSs55BElt5Rs7K?mode=gi_t"
+                target="_blank"
+                rel="noopener"
               >
+                Join the Community
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <line x1="4" y1="12" x2="19" y2="12" />
+                  <polyline points="13 6 19 12 13 18" />
+                </svg>
+              </a>
+              <a
+                class="hero-button secondary"
+                href="https://www.youtube.com/@sloug-yt"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="9" />
+                  <polygon points="10 8.4 16 12 10 15.6" fill="currentColor" stroke="none" />
+                </svg>
+                Watch Video
+              </a>
             </div>
           </div>
 
-          <aside class="hero-event" aria-label="Next SLOUG event">
-            <img src="images/IMG_1161.PNG" alt="SLOUG Tech Connect 2026 save the date poster" />
-            <div class="hero-event-body">
-              <p class="event-kicker">Next Event</p>
-              <h2>SLOUG Tech Connect 2026</h2>
-              <p class="event-date">Thursday, 08 October 2026</p>
-              <p>Save the date for Sri Lanka's Oracle technology community gathering.</p>
-              <a class="text-link light-link" href="#events">See event details</a>
-            </div>
-          </aside>
+          <ul class="hero-verbs" aria-label="What SLOUG is about">
+            <li>Learn</li>
+            <li>Connect</li>
+            <li>Share</li>
+            <li>Innovate</li>
+          </ul>
 
-          <div class="hero-stats" aria-label="SLOUG areas">
-            <div>
-              <strong>Community</strong>
-              <span>People, knowledge, and opportunity</span>
+          <div class="hero-event" hidden>
+            <div class="hero-event-heading">
+              <h2>Upcoming Event</h2>
+              <a href="#events">View All Events <span aria-hidden="true">→</span></a>
             </div>
-            <div>
-              <strong>Learning</strong>
-              <span>Practical sessions and shared experience</span>
-            </div>
-            <div>
-              <strong>Innovation</strong>
-              <span>Oracle technology for a brighter tomorrow</span>
-            </div>
+            <a class="hero-event-card" href="#events" data-hero-event-card>
+              <span class="hero-event-date">
+                <small data-hero-event-month>Sep</small>
+                <strong data-hero-event-day>26</strong>
+              </span>
+              <span class="hero-event-main">
+                <strong data-hero-event-title>Oracle 23ai Deep Dive</strong>
+                <span class="hero-event-meta">
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    <span data-hero-event-venue>Colombo</span>
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <circle cx="12" cy="12" r="8.5" />
+                      <polyline points="12 7 12 12 15.5 14" />
+                    </svg>
+                    <span data-hero-event-time>5:00 PM (LKR)</span>
+                  </span>
+                </span>
+              </span>
+              <span class="hero-event-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <polyline points="9 5 16 12 9 19" />
+                </svg>
+              </span>
+            </a>
+            <p class="hero-footnote">Driving a stronger Oracle community in Sri Lanka.</p>
           </div>
         </div>
       </section>
@@ -339,6 +391,15 @@
         pastList: document.querySelector('[data-past-events]'),
         upcomingCount: document.querySelector('[data-upcoming-count]'),
         pastCount: document.querySelector('[data-past-count]'),
+        heroEvent: {
+          root: document.querySelector('.hero-event'),
+          card: document.querySelector('[data-hero-event-card]'),
+          month: document.querySelector('[data-hero-event-month]'),
+          day: document.querySelector('[data-hero-event-day]'),
+          title: document.querySelector('[data-hero-event-title]'),
+          venue: document.querySelector('[data-hero-event-venue]'),
+          time: document.querySelector('[data-hero-event-time]'),
+        },
       };
 
       const descriptionPreviewLimit = 45;
@@ -605,6 +666,48 @@
         eventModal.dialog.focus();
       };
 
+      const updateHeroEvent = (event) => {
+        const heroEvent = eventsState.heroEvent;
+        if (!heroEvent.root || !heroEvent.card) {
+          return;
+        }
+
+        if (!event) {
+          heroEvent.root.hidden = true;
+          return;
+        }
+
+        const title = getField(event, ['Event title', 'Title']) || 'SLOUG Event';
+        const date = event.parsedDate || parseEventDate(event);
+        const rawDate = getField(event, ['Event date', 'Date']);
+        const { day, month } = getDateBadgeParts(date, rawDate);
+        const displayMonth = month === 'TBA' ? month : `${month.slice(0, 1)}${month.slice(1).toLowerCase()}`;
+        const venue = getField(event, ['Venue']) || 'To be announced';
+        const time = getField(event, ['Event time', 'Time']) || 'To be announced';
+
+        heroEvent.root.hidden = false;
+        if (heroEvent.month) {
+          heroEvent.month.textContent = displayMonth;
+        }
+        if (heroEvent.day) {
+          heroEvent.day.textContent = day;
+        }
+        if (heroEvent.title) {
+          heroEvent.title.textContent = title;
+        }
+        if (heroEvent.venue) {
+          heroEvent.venue.textContent = venue;
+        }
+        if (heroEvent.time) {
+          heroEvent.time.textContent = time;
+        }
+
+        heroEvent.card.onclick = (clickEvent) => {
+          clickEvent.preventDefault();
+          openEventModal(event, 'Upcoming', heroEvent.card);
+        };
+      };
+
       const createEventCard = (event, group) => {
         const isUpcoming = group === 'Upcoming';
         const title = getField(event, ['Event title', 'Title']) || 'SLOUG Event';
@@ -710,6 +813,7 @@
 
         eventsState.upcomingCount.textContent = `${upcoming.length || (visibleEvents.length ? 0 : 1)} shown`;
         eventsState.pastCount.textContent = `${past.length} shown`;
+        updateHeroEvent(upcoming[0]);
 
         if (upcoming.length) {
           eventsState.upcomingList.replaceChildren(...upcoming.map((event) => createEventCard(event, 'Upcoming')));
@@ -743,6 +847,7 @@
 
           renderEvents(events);
         } catch {
+          updateHeroEvent(null);
           eventsState.upcomingCount.textContent = '1 shown';
           eventsState.pastCount.textContent = 'Unavailable';
           renderEmpty(eventsState.pastList, 'Past events are temporarily unavailable.');
@@ -751,6 +856,31 @@
 
       loadEvents();
 
+      const siteHeader = document.querySelector('.site-header');
+      const menuToggle = document.querySelector('[data-menu-toggle]');
+      const primaryNav = document.querySelector('#primary-nav');
+      const closeMenu = () => {
+        if (!siteHeader || !menuToggle) {
+          return;
+        }
+
+        siteHeader.classList.remove('nav-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      };
+
+      if (siteHeader && menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = siteHeader.classList.toggle('nav-open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+
+        primaryNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
       eventModal.closeButtons.forEach((button) => {
         button.addEventListener('click', closeEventModal);
       });
@@ -758,6 +888,10 @@
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && eventModal.root && !eventModal.root.hidden) {
           closeEventModal();
+        }
+
+        if (event.key === 'Escape') {
+          closeMenu();
         }
       });
     </script>
