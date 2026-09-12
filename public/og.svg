@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#111418"/>
+  <path d="M0 482H1200V630H0V482Z" fill="#15181D"/>
+  <path d="M92 438C92 286.122 215.122 163 367 163H900V238H367C256.543 238 167 327.543 167 438V499H92V438Z" fill="#C74634"/>
+  <path d="M1108 192C1108 343.878 984.878 467 833 467H300V392H833C943.457 392 1033 302.457 1033 192V131H1108V192Z" fill="#F2B94B"/>
+  <path d="M155 315H1045" stroke="white" stroke-width="2" stroke-opacity="0.18"/>
+  <text x="92" y="132" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="0">SLOUG</text>
+  <text x="92" y="546" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="0">Sri Lanka Oracle User Group</text>
+  <text x="94" y="585" fill="#B8C0C5" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="0">Events, learning, and community for Oracle professionals.</text>
+</svg>
