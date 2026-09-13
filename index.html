@@ -549,20 +549,37 @@
         return { text: preview, hasMore };
       };
 
+      const getGoogleDriveFileId = (url) => {
+        try {
+          const parsed = new URL(url.trim());
+          if (!parsed.hostname.includes('drive.google.com')) {
+            return '';
+          }
+
+          const fileMatch = parsed.pathname.match(/\/file\/d\/([^/]+)/);
+          return fileMatch?.[1] || parsed.searchParams.get('id') || '';
+        } catch {
+          return '';
+        }
+      };
+
       const normalizeUrl = (url) => {
         if (!url) {
           return '';
         }
 
-        const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-        const normalized = driveMatch ? `https://drive.google.com/uc?export=view&id=${driveMatch[1]}` : url;
-
         try {
-          const parsed = new URL(normalized);
+          const parsed = new URL(url.trim());
           return ['http:', 'https:'].includes(parsed.protocol) ? parsed.href : '';
         } catch {
           return '';
         }
+      };
+
+      const normalizeImageUrl = (url) => {
+        const normalized = normalizeUrl(url);
+        const driveFileId = normalized ? getGoogleDriveFileId(normalized) : '';
+        return driveFileId ? `https://drive.google.com/thumbnail?id=${encodeURIComponent(driveFileId)}&sz=w1200` : normalized;
       };
 
       const createLink = (label, href, className) => {
@@ -713,7 +730,7 @@
         const title = getField(event, ['Event title', 'Title']) || 'SLOUG Event';
         const date = parseEventDate(event);
         const rawDate = getField(event, ['Event date', 'Date']);
-        const posterUrl = normalizeUrl(getField(event, ['Event poster image URL', 'Image URL', 'Poster'])) || 'images/IMG_1161.PNG';
+        const posterUrl = normalizeImageUrl(getField(event, ['Event poster image URL', 'Image URL', 'Poster'])) || 'images/IMG_1161.PNG';
         const registrationUrl = getField(event, ['Registration link']);
         const youtubeUrl = getField(event, ['YouTube link']);
         const venue = getField(event, ['Venue']) || 'To be announced';
