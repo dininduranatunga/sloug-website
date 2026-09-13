@@ -110,12 +110,6 @@ img {
   line-height: 1;
 }
 
-.brand-wordmark {
-  display: block;
-  height: auto;
-  width: 112px;
-}
-
 .brand small {
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.63rem;
@@ -296,7 +290,7 @@ h1 {
   font-size: clamp(3.75rem, 7.7vw, 7.4rem);
   font-weight: 800;
   letter-spacing: -0.005em;
-  line-height: 1;
+  line-height: 0;
   margin-bottom: 0;
   margin-top: 26px;
 }
@@ -305,6 +299,7 @@ h1 {
   display: block;
   height: auto;
   max-width: min(620px, 82vw);
+  object-fit: contain;
   width: clamp(270px, 36vw, 620px);
 }
 
@@ -1598,14 +1593,6 @@ h4 {
   line-height: 1;
 }
 
-.footer-logo .footer-wordmark {
-  display: block;
-  height: auto;
-  max-width: none;
-  object-fit: contain;
-  width: 110px;
-}
-
 .footer-logo small {
   color: rgba(255, 255, 255, 0.58);
   font-size: 0.78rem;
@@ -1816,10 +1803,6 @@ h4 {
 
   .brand strong {
     font-size: 1.05rem;
-  }
-
-  .brand-wordmark {
-    width: 62px;
   }
 
   .brand small {
