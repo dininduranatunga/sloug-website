@@ -323,7 +323,7 @@ h1 {
 }
 
 .hero-logo-title {
-  max-width: min(430px, 82vw);
+  max-width: min(360px, 82vw);
 }
 
 .hero-logo-title img {
@@ -1863,7 +1863,7 @@ h4 {
   }
 
   .hero-logo-title {
-    max-width: min(300px, 76vw);
+    max-width: min(230px, 58vw);
   }
 
   .menu-toggle {
