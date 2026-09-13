@@ -88,7 +88,6 @@ img {
   width: 48px;
 }
 
-/* The source PNG is a full lockup; this window crops it to the circular emblem. */
 .brand-mark img {
   display: block;
   height: 200%;
@@ -97,6 +96,18 @@ img {
   position: absolute;
   top: -29%;
   width: 200%;
+}
+
+.brand-wordmark {
+  display: block;
+  flex: 0 0 auto;
+  width: 116px;
+}
+
+.brand-wordmark img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .brand strong,
@@ -285,22 +296,40 @@ p {
   margin-top: 0;
 }
 
+.sloug-o {
+  border: 0.1em solid #e04436;
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: transparent;
+  display: inline-block;
+  height: 0.7em;
+  line-height: 1;
+  margin: 0 0.03em;
+  overflow: hidden;
+  text-indent: -999px;
+  transform: translateY(0.045em);
+  vertical-align: baseline;
+  width: 1.34em;
+}
+
 h1 {
   color: white;
   font-size: clamp(3.75rem, 7.7vw, 7.4rem);
   font-weight: 800;
   letter-spacing: -0.005em;
-  line-height: 0;
+  line-height: 1;
   margin-bottom: 0;
   margin-top: 26px;
 }
 
-.hero-wordmark {
+.hero-logo-title {
+  max-width: min(430px, 82vw);
+}
+
+.hero-logo-title img {
   display: block;
   height: auto;
-  max-width: min(620px, 82vw);
-  object-fit: contain;
-  width: clamp(270px, 36vw, 620px);
+  width: 100%;
 }
 
 .hero-subtitle {
@@ -1577,9 +1606,37 @@ h4 {
 
 .footer-logo img {
   display: block;
-  height: 48px;
   object-fit: contain;
+}
+
+.footer-logo-mark {
+  border-radius: 50%;
+  display: block;
+  flex: 0 0 auto;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
   width: 48px;
+}
+
+.footer-logo-mark img {
+  height: 200%;
+  left: -47%;
+  max-width: none;
+  position: absolute;
+  top: -29%;
+  width: 200%;
+}
+
+.footer-logo-wordmark {
+  display: block;
+  flex: 0 0 auto;
+  width: 116px;
+}
+
+.footer-logo-wordmark img {
+  height: auto;
+  width: 100%;
 }
 
 .footer-logo strong,
@@ -1801,12 +1858,12 @@ h4 {
     width: 30px;
   }
 
-  .brand strong {
-    font-size: 1.05rem;
+  .brand-wordmark {
+    width: 96px;
   }
 
-  .brand small {
-    display: none;
+  .hero-logo-title {
+    max-width: min(300px, 76vw);
   }
 
   .menu-toggle {
@@ -1865,10 +1922,6 @@ h4 {
 
   h1 {
     margin-top: 5px;
-  }
-
-  .hero-wordmark {
-    width: min(76vw, 300px);
   }
 
   h2 {
